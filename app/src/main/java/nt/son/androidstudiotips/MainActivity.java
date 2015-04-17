@@ -1,17 +1,29 @@
 package nt.son.androidstudiotips;
 
-import android.support.v7.app.ActionBarActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import nt.son.androidstudiotips.base.BaseActionBarActivity;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends BaseActionBarActivity implements MainFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //add MainFragment
+        if (savedInstanceState == null) {
+            Fragment mainF = MainFragment.newInstance("", "");
+            FragmentTransaction ft = getSafeFragmentManager().beginTransaction();
+            ft.add(R.id.ll_main, mainF, "main-f");
+            ft.commit();
+        }
     }
 
 
@@ -35,5 +47,10 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
