@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nt.son.androidstudiotips.otto.OttoFragmentBottom">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subscribe"
+        android:id="@+id/textView3"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/otto_txt_bottom"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/otto_btn_bottom"
+        android:layout_gravity="right|bottom" />
+</FrameLayout>

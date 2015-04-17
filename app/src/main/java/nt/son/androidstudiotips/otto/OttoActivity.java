@@ -1,27 +1,26 @@
-package nt.son.androidstudiotips;
+package nt.son.androidstudiotips.otto;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import nt.son.androidstudiotips.R;
 import nt.son.androidstudiotips.base.BaseActionBarActivity;
 
-
-public class MainActivity extends BaseActionBarActivity implements MainFragment.OnFragmentInteractionListener {
+public class OttoActivity extends BaseActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //add MainFragment
+        setContentView(R.layout.activity_otto);
         if (savedInstanceState == null) {
-            Fragment mainF = MainFragment.newInstance("", "");
+            Fragment topF = new OttoFragmentTop();
+            Fragment btmF = new OttoFragmentBottom();
             FragmentTransaction ft = getSafeFragmentManager().beginTransaction();
-            ft.add(R.id.ll_main, mainF, "main-f");
+            ft.add(R.id.otto_ll_1, topF);
+            ft.add(R.id.otto_ll_2, btmF);
             ft.commit();
         }
     }
@@ -30,7 +29,7 @@ public class MainActivity extends BaseActionBarActivity implements MainFragment.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_otto, menu);
         return true;
     }
 
@@ -47,10 +46,5 @@ public class MainActivity extends BaseActionBarActivity implements MainFragment.
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

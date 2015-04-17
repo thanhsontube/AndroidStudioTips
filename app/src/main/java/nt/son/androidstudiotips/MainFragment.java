@@ -2,6 +2,7 @@ package nt.son.androidstudiotips;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import java.util.List;
 import nt.son.androidstudiotips.base.BaseFragment;
 import nt.son.androidstudiotips.main.AdapterMain;
 import nt.son.androidstudiotips.main.MainDto;
+import nt.son.androidstudiotips.otto.OttoActivity;
 
 
 /**
@@ -119,10 +121,14 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Log.d(TAG, ">>>" + "click:" + position);
+        Intent intent = null;
         switch (position) {
             case 0:
-
+                intent = new Intent(getActivity(), OttoActivity.class);
                 break;
+        }
+        if (intent != null) {
+            startActivity(intent);
         }
     }
 
