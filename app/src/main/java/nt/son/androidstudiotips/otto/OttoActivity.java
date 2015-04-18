@@ -5,9 +5,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.squareup.otto.Subscribe;
 
 import nt.son.androidstudiotips.R;
 import nt.son.androidstudiotips.base.BaseActionBarActivity;
+import nt.son.androidstudiotips.main.MainDto;
 
 public class OttoActivity extends BaseActionBarActivity {
 
@@ -15,6 +20,8 @@ public class OttoActivity extends BaseActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otto);
+        txt = (TextView) findViewById(R.id.otto_txt_main);
+
         if (savedInstanceState == null) {
             Fragment topF = new OttoFragmentTop();
             Fragment btmF = new OttoFragmentBottom();
@@ -23,6 +30,15 @@ public class OttoActivity extends BaseActionBarActivity {
             ft.add(R.id.otto_ll_2, btmF);
             ft.commit();
         }
+//        SingletonBus.post(new MainDto("OttoActivity onCreate"));
+        SingletonBus.register(this);
+
+        findViewById(R.id.otto_btn_send).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SingletonBus.post(new MainDto("Main otto activity"));
+            }
+        });
     }
 
 
@@ -47,4 +63,16 @@ public class OttoActivity extends BaseActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+//  @Produce
+//    public MainDto getDataFromMainOttoActivity () {
+//        return new MainDto("Start up");
+//    }
+
+    @Subscribe
+    public void getMsgFromTop(OttoDto dto) {
+        txt.setText(dto.name);
+    }
+    TextView txt;
+
 }
