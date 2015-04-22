@@ -75,4 +75,10 @@ public class OttoActivity extends BaseActionBarActivity {
     }
     TextView txt;
 
+    private void test() {
+        startActivity(getIntent());
+        String s1 = "thanh son tube";
+
+    }
+
 }

@@ -101,6 +101,7 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
         list.add(new MainDto("OTTO"));
 
         //1
+        list.add(new MainDto("RetroFit"));
     }
 
     @Override
@@ -125,6 +126,9 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
         switch (position) {
             case 0:
                 intent = new Intent(getActivity(), OttoActivity.class);
+                break;
+            case 1:
+                mListener.onReplaceFragment(1);
                 break;
         }
         if (intent != null) {
@@ -169,6 +173,7 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+        public void onReplaceFragment(int pos);
     }
 
 }

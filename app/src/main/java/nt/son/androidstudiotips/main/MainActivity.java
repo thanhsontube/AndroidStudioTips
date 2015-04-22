@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import nt.son.androidstudiotips.MainFragment;
 import nt.son.androidstudiotips.R;
 import nt.son.androidstudiotips.base.BaseActionBarActivity;
+import nt.son.androidstudiotips.retrofit.RetrofitFragment;
 
 
 public class MainActivity extends BaseActionBarActivity implements MainFragment.OnFragmentInteractionListener {
@@ -54,5 +55,19 @@ public class MainActivity extends BaseActionBarActivity implements MainFragment.
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void onReplaceFragment(int pos) {
+        switch (pos) {
+            case 1:
+                FragmentTransaction ft = getSafeFragmentManager().beginTransaction();
+                Fragment f = new RetrofitFragment();
+                ft.replace(R.id.ll_main, f, "retrofit");
+                ft.addToBackStack(null);
+                ft.commitAllowingStateLoss();
+
+                break;
+        }
     }
 }
