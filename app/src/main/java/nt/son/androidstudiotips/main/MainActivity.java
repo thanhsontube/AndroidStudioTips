@@ -9,11 +9,11 @@ import android.view.MenuItem;
 
 import nt.son.androidstudiotips.MainFragment;
 import nt.son.androidstudiotips.R;
-import nt.son.androidstudiotips.base.BaseActionBarActivity;
+import nt.son.androidstudiotips.base.BaseAppCompatActivity;
 import nt.son.androidstudiotips.retrofit.RetrofitFragment;
 
 
-public class MainActivity extends BaseActionBarActivity implements MainFragment.OnFragmentInteractionListener {
+public class MainActivity extends BaseAppCompatActivity implements MainFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

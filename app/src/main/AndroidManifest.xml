@@ -24,6 +24,10 @@
             android:name=".otto.OttoActivity"
             android:label="@string/title_activity_otto" >
         </activity>
+        <activity
+            android:name=".weak_gc_asycn.WeakActivity"
+            android:label="@string/title_activity_weak" >
+        </activity>
     </application>
 
 </manifest>

@@ -20,6 +20,7 @@ import nt.son.androidstudiotips.base.BaseFragment;
 import nt.son.androidstudiotips.main.AdapterMain;
 import nt.son.androidstudiotips.main.MainDto;
 import nt.son.androidstudiotips.otto.OttoActivity;
+import nt.son.androidstudiotips.weak_gc_asycn.WeakActivity;
 
 
 /**
@@ -102,6 +103,9 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
 
         //1
         list.add(new MainDto("RetroFit"));
+
+        //2
+        list.add(new MainDto("WeakPreferences, GC, AsyncTask, Leak M"));
     }
 
     @Override
@@ -129,6 +133,9 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
                 break;
             case 1:
                 mListener.onReplaceFragment(1);
+                break;
+            case 2:
+                intent = new Intent(getActivity(), WeakActivity.class);
                 break;
         }
         if (intent != null) {

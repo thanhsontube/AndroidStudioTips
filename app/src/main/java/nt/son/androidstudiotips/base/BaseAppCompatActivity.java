@@ -3,12 +3,12 @@ package nt.son.androidstudiotips.base;
 import android.os.Build;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by Sonnt on 4/17/15.
  */
-public class BaseActionBarActivity extends ActionBarActivity {
+public class BaseAppCompatActivity extends AppCompatActivity {
     protected FragmentManager fragmentManager;
     protected ActionBar actionBar;
 
