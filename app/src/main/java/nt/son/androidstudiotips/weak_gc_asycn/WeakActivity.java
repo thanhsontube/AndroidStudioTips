@@ -11,9 +11,9 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 
 import nt.son.androidstudiotips.R;
-import nt.son.androidstudiotips.base.BaseAppCompatActivity;
+import nt.son.androidstudiotips.base.BaseActivity;
 
-public class WeakActivity extends BaseAppCompatActivity {
+public class WeakActivity extends BaseActivity {
     private static final String TAG = "WeakTask";
     private Button btnStart;
     private Button btnStop;

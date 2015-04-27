@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Created by Sonnt on 4/17/15.
  */
-public class BaseAppCompatActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
     protected FragmentManager fragmentManager;
     protected ActionBar actionBar;
 

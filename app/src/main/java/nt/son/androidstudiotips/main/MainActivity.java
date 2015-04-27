@@ -9,11 +9,12 @@ import android.view.MenuItem;
 
 import nt.son.androidstudiotips.MainFragment;
 import nt.son.androidstudiotips.R;
-import nt.son.androidstudiotips.base.BaseAppCompatActivity;
+import nt.son.androidstudiotips.base.BaseActivity;
 import nt.son.androidstudiotips.retrofit.RetrofitFragment;
+import nt.son.androidstudiotips.shape.ShapeFragment;
 
 
-public class MainActivity extends BaseAppCompatActivity implements MainFragment.OnFragmentInteractionListener {
+public class MainActivity extends BaseActivity implements MainFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +60,21 @@ public class MainActivity extends BaseAppCompatActivity implements MainFragment.
 
     @Override
     public void onReplaceFragment(int pos) {
+        FragmentTransaction ft = getSafeFragmentManager().beginTransaction();
+        Fragment f;
         switch (pos) {
             case 1:
-                FragmentTransaction ft = getSafeFragmentManager().beginTransaction();
-                Fragment f = new RetrofitFragment();
+                 f = new RetrofitFragment();
                 ft.replace(R.id.ll_main, f, "retrofit");
                 ft.addToBackStack(null);
                 ft.commitAllowingStateLoss();
 
+                break;
+            case 3:
+                 f = new ShapeFragment();
+                ft.replace(R.id.ll_main, f, "shape");
+                ft.addToBackStack(null);
+                ft.commitAllowingStateLoss();
                 break;
         }
     }

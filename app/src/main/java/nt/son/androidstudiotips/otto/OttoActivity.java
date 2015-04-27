@@ -11,10 +11,10 @@ import android.widget.TextView;
 import com.squareup.otto.Subscribe;
 
 import nt.son.androidstudiotips.R;
-import nt.son.androidstudiotips.base.BaseAppCompatActivity;
+import nt.son.androidstudiotips.base.BaseActivity;
 import nt.son.androidstudiotips.main.MainDto;
 
-public class OttoActivity extends BaseAppCompatActivity {
+public class OttoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
