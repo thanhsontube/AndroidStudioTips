@@ -2,6 +2,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="nt.son.androidstudiotips.location_map.HereMapActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:title="add 1"
+        android:id="@+id/action_add_1"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="add 2"
+        android:id="@+id/action_add_2"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="add 3"
+        android:id="@+id/action_add_3"
+        app:showAsAction="always"/>
+
 </menu>

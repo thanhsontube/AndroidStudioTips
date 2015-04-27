@@ -6,22 +6,35 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import nt.son.androidstudiotips.R;
 import nt.son.androidstudiotips.base.BaseActivity;
 
-public class HereMapActivity extends BaseActivity implements HereMapFragment.OnFragmentInteractionListener{
+public class HereMapActivity extends BaseActivity implements HereMapFragment.OnFragmentInteractionListener {
 
     private SupportMapFragment supportMapFragment;
     private GoogleMap googleMap;
+    //10.779786,106.698994
+    public static double LAT = 10.779786;
+    public static double LGN = 106.698994;
+    public static LatLng POSITION = new LatLng(LAT,LGN);
+
+    //10.777077, 106.697648
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +42,11 @@ public class HereMapActivity extends BaseActivity implements HereMapFragment.OnF
         setContentView(R.layout.activity_here_map);
 
         supportMapFragment = (SupportMapFragment) getSafeFragmentManager().findFragmentById(R.id.map);
-        googleMap = supportMapFragment.getMap();
+        getMAP();
 
-        googleMap.setMyLocationEnabled(true);
 
         FragmentTransaction ft = getSafeFragmentManager().beginTransaction();
-        HereMapFragment f = HereMapFragment.newInstance("","");
+        HereMapFragment f = HereMapFragment.newInstance("", "");
         ft.add(R.id.map_ll_map, f, "map");
         ft.commitAllowingStateLoss();
     }
@@ -59,6 +71,17 @@ public class HereMapActivity extends BaseActivity implements HereMapFragment.OnF
             return true;
         }
 
+        switch (item.getItemId()) {
+            case R.id.action_add_1:
+                addMarkers();
+                break;
+            case R.id.action_add_2:
+                add136NKKN();
+                break;
+            case R.id.action_add_3:
+                break;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -78,11 +101,91 @@ public class HereMapActivity extends BaseActivity implements HereMapFragment.OnF
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         LatLng latLng;
         if (location != null) {
-           latLng  = new LatLng(location.getLatitude(), location.getLongitude());
+            latLng = new LatLng(location.getLatitude(), location.getLongitude());
         } else {
-            latLng = new LatLng(37.4218,  -122.0840);
+            latLng = new LatLng(LAT, LGN);
         }
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 4f);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16f);
         googleMap.moveCamera(cameraUpdate);
+    }
+
+    private void getMAP () {
+        googleMap = supportMapFragment.getMap();
+
+        googleMap.setMyLocationEnabled(true);
+        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                return false;
+            }
+        });
+
+        googleMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
+            @Override
+            public void onMarkerDragStart(Marker marker) {
+
+            }
+
+            @Override
+            public void onMarkerDrag(Marker marker) {
+
+            }
+
+            @Override
+            public void onMarkerDragEnd(Marker marker) {
+
+            }
+        });
+
+        googleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+            @Override
+            public View getInfoWindow(Marker marker) {
+                return getView(marker);
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+                return null;
+            }
+        });
+
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                marker.hideInfoWindow();
+
+            }
+        });
+
+
+
+    }
+
+    private View getView (Marker marker) {
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = layoutInflater.inflate(R.layout.row_map, null);
+        return view;
+    }
+
+    private void addMarkers() {
+
+        MarkerOptions markerOpt = new MarkerOptions().position(POSITION)
+                .title("Notre Dame Cathedral")
+                .icon(BitmapDescriptorFactory.defaultMarker())
+                .snippet("Snippet")
+                .alpha(0.6f);
+        Marker marker = googleMap.addMarker(markerOpt);
+        marker.setDraggable(true);
+    }
+
+    private void add136NKKN () {
+        MarkerOptions opts = new MarkerOptions().position(new LatLng(10.777077, 106.697648))
+                .title("Home")
+                .snippet("136 Nan Ky Khoi Nghia")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .alpha(1f);
+
+        Marker marker = googleMap.addMarker(opts);
+        marker.setDraggable(true);
     }
 }
