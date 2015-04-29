@@ -1,0 +1,27 @@
+<resources>
+
+
+    <style name="AppTheme.AppStyled" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/md_indigo_100</item>
+        <item name="colorPrimary">@color/md_indigo_500</item>
+        <item name="colorAccent">@color/md_red_500</item>
+        <item name="android:textColorPrimary">@color/md_white_1000</item>
+        <item name="android:textColor">@color/md_purple_500</item>
+        <item name="android:textStyle">bold</item>
+
+
+    </style>
+
+    <!--style with toolbar-->
+    <style name="AppTheme.StyleToolBar" parent="AppTheme.AppStyled">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <!--Not work-->
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:displayOptions">showTitle|showHome|homeAsUp
+        </item>
+    </style>
+
+</resources>

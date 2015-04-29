@@ -11,16 +11,20 @@
     <item
         android:title="add 1"
         android:id="@+id/action_add_1"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
     <item
         android:title="add 2"
         android:id="@+id/action_add_2"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
     <item
         android:title="add 3"
         android:id="@+id/action_add_3"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
+    <item
+        android:title="target"
+        android:id="@+id/action_add_4"
+        app:showAsAction="always" />
 
 </menu>

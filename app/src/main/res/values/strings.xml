@@ -10,4 +10,6 @@
     <string name="title_activity_weak">WeakActivity</string>
     <string name="title_activity_here_map">HereMapActivity</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_tool_bar">ToolBarActivity</string>
+    <string name="title_activity_facebook4">Facebook4Activity</string>
 </resources>

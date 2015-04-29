@@ -13,14 +13,18 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.crashlytics.android.Crashlytics;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import nt.son.androidstudiotips.base.BaseFragment;
+import nt.son.androidstudiotips.facebook.Facebook4Activity;
 import nt.son.androidstudiotips.location_map.HereMapActivity;
 import nt.son.androidstudiotips.main.AdapterMain;
 import nt.son.androidstudiotips.main.MainDto;
 import nt.son.androidstudiotips.otto.OttoActivity;
+import nt.son.androidstudiotips.toolbar.ToolBarActivity;
 import nt.son.androidstudiotips.weak_gc_asycn.WeakActivity;
 
 
@@ -111,6 +115,10 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
         //3 shape- gradient
         list.add(new MainDto("Shape-Gradient"));
         list.add(new MainDto("Location - Google MAP"));
+        //5
+        list.add(new MainDto("ToolBar"));
+        //6 fb 4
+        list.add(new MainDto("Facebook 4"));
     }
 
     @Override
@@ -130,6 +138,7 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Crashlytics.log("onItemClick:" +position);
         Log.d(TAG, ">>>" + "click:" + position);
         Intent intent = null;
         switch (position) {
@@ -145,8 +154,14 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
             case 3:
                 mListener.onReplaceFragment(3);
                 break;
-            case  4:
+            case 4:
                 intent = new Intent(getActivity(), HereMapActivity.class);
+                break;
+            case 5:
+                intent = new Intent(getActivity(), ToolBarActivity.class);
+                break;
+            case 6:
+                intent = new Intent(getActivity(), Facebook4Activity.class);
                 break;
         }
         if (intent != null) {
@@ -190,6 +205,7 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
      */
     public interface OnFragmentInteractionListener {
         public void onFragmentInteraction(Uri uri);
+
         public void onReplaceFragment(int pos);
     }
 

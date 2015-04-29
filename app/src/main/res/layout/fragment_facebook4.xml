@@ -1,0 +1,66 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nt.son.androidstudiotips.facebook.Facebook4Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Login"
+                android:background="@color/md_red_500"
+                android:layout_height="50dp"
+                android:id="@+id/fb_btn_login" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Logout"
+                android:background="@color/md_indigo_500"
+                android:layout_height="50dp"
+                android:id="@+id/fb_btn_logout" />
+        </LinearLayout>
+
+       <com.facebook.login.widget.LoginButton
+           android:layout_marginTop = "8dp"
+           android:layout_width = "wrap_content"
+           android:layout_height = "50dp"
+           android:id = "@+id/fb_login"/>
+
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Post Something"
+                android:background="@color/md_red_500"
+                android:layout_height="50dp"
+                android:id="@+id/fb_btn_post" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Other"
+                android:background="@color/md_indigo_500"
+                android:layout_height="50dp"
+                android:id="@+id/fb_btn_other" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
