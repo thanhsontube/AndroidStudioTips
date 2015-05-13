@@ -119,6 +119,9 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
         list.add(new MainDto("ToolBar"));
         //6 fb 4
         list.add(new MainDto("Facebook 4"));
+
+        //7 position view
+        list.add(new MainDto("Position View"));
     }
 
     @Override
@@ -162,6 +165,9 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
                 break;
             case 6:
                 intent = new Intent(getActivity(), Facebook4Activity.class);
+                break;
+            case 7 :
+                mListener.onReplaceFragment(7);
                 break;
         }
         if (intent != null) {

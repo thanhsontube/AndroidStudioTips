@@ -8,13 +8,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import nt.son.androidstudiotips.MainFragment;
+import nt.son.androidstudiotips.PositionView.PositionViewFragment;
 import nt.son.androidstudiotips.R;
 import nt.son.androidstudiotips.base.BaseActivity;
 import nt.son.androidstudiotips.retrofit.RetrofitFragment;
 import nt.son.androidstudiotips.shape.ShapeFragment;
 
 
-public class MainActivity extends BaseActivity implements MainFragment.OnFragmentInteractionListener {
+public class MainActivity extends BaseActivity implements MainFragment.OnFragmentInteractionListener,
+PositionViewFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,12 @@ public class MainActivity extends BaseActivity implements MainFragment.OnFragmen
                 ft.replace(R.id.ll_main, f, "shape");
                 ft.addToBackStack(null);
                 ft.commitAllowingStateLoss();
+                break;
+            case 7:
+                f = PositionViewFragment.newInstance("", "");
+                ft.replace(R.id.ll_main, f, "position");
+                ft.addToBackStack(null);
+                ft.commit();
                 break;
         }
     }

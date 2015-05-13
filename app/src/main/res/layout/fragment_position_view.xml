@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="nt.son.androidstudiotips.PositionView.PositionViewFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:id="@+id/txt_position"
+        android:text="Oliver Arcana"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:tag="btn1"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="Grab Car 1" />
+
+        <Button
+            android:tag="btn2"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="Grab Car 2" />
+
+        <Button
+            android:tag="btn3"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="Grab Car 3" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

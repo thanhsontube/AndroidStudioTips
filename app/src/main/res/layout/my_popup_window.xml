@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="150dp"
+    android:background="@color/md_indigo_500"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/md_red_500">
+
+    </View>
+
+    <View
+        android:layout_width="2dp"
+
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/md_white_1000">
+
+    </View>
+</LinearLayout>
