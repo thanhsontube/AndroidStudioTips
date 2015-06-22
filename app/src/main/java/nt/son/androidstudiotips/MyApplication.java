@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.crashlytics.android.Crashlytics;
 import com.facebook.FacebookSdk;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import io.fabric.sdk.android.Fabric;
 import nt.son.androidstudiotips.retrofit.AppApi;
@@ -18,5 +19,6 @@ public class MyApplication extends Application {
         Fabric.with(this, new Crashlytics());
         AppApi.createInstance(getApplicationContext());
         FacebookSdk.sdkInitialize(getApplicationContext());
+        Fresco.initialize(this);
     }
 }

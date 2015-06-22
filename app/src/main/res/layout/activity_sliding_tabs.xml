@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="nt.son.androidstudiotips.sliding_tabs.SlidingTabsActivity">
+
+   <!--
+   =======================
+       toolbar
+   =======================
+   -->
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/tabs_toolbar"
+        android:background="?colorPrimary">
+
+    </android.support.v7.widget.Toolbar>
+    <nt.son.androidstudiotips.sliding_tabs.extras.SlidingTabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabs_sliding_layout">
+
+    </nt.son.androidstudiotips.sliding_tabs.extras.SlidingTabLayout>
+    <!--
+    =======================
+        Pager
+    =======================
+    -->
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabs_view_pager"/>
+
+</LinearLayout>

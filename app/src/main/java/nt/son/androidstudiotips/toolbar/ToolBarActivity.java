@@ -18,7 +18,9 @@ public class ToolBarActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_bar);
         toolbar = (Toolbar) findViewById(R.id.mToolbar);
+        toolbar.setTitle("");
         getDelegate().setSupportActionBar(toolbar);
+
 
 
         toolbarBtm = (Toolbar) findViewById(R.id.mToolbar2);

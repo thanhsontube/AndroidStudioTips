@@ -62,6 +62,10 @@ public class HereMapActivity extends BaseActivity implements HereMapFragment.OnF
         ft.commitAllowingStateLoss();
     }
 
+    private void transition () {
+//        TransitionManager
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

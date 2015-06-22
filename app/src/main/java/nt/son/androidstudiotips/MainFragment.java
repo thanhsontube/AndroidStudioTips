@@ -24,6 +24,7 @@ import nt.son.androidstudiotips.location_map.HereMapActivity;
 import nt.son.androidstudiotips.main.AdapterMain;
 import nt.son.androidstudiotips.main.MainDto;
 import nt.son.androidstudiotips.otto.OttoActivity;
+import nt.son.androidstudiotips.sliding_tabs.SlidingTabsActivity;
 import nt.son.androidstudiotips.toolbar.ToolBarActivity;
 import nt.son.androidstudiotips.weak_gc_asycn.WeakActivity;
 
@@ -122,6 +123,16 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
 
         //7 position view
         list.add(new MainDto("Position View"));
+        //8 sliding tabs
+        list.add(new MainDto("Sliding Tabs"));
+
+        //9 text float edittext
+
+        list.add(new MainDto("Float EditText"));
+        //10 Fresco
+        list.add(new MainDto("Image Loader: Fresco"));
+        //11 Notification
+        list.add(new MainDto("Notification"));
     }
 
     @Override
@@ -168,6 +179,19 @@ public class MainFragment extends BaseFragment implements AdapterView.OnItemClic
                 break;
             case 7 :
                 mListener.onReplaceFragment(7);
+                break;
+            case 8:
+                intent = new Intent(getActivity(), SlidingTabsActivity.class);
+                break;
+
+            case 9 :
+                mListener.onReplaceFragment(9);
+                break;
+
+            case 10 :
+                mListener.onReplaceFragment(10);
+                break;case 11 :
+                mListener.onReplaceFragment(11);
                 break;
         }
         if (intent != null) {

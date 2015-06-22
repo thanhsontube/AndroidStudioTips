@@ -12,4 +12,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_tool_bar">ToolBarActivity</string>
     <string name="title_activity_facebook4">Facebook4Activity</string>
+    <string name="title_activity_sliding_tabs">SlidingTabsActivity</string>
 </resources>

@@ -16,12 +16,20 @@
     <style name="AppTheme.StyleToolBar" parent="AppTheme.AppStyled">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="actionBarTabStyle">@style/AppTheme.ActionBar</item>
     </style>
 
     <!--Not work-->
     <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="android:displayOptions">showTitle|showHome|homeAsUp
         </item>
+    </style>
+
+
+    <style name="mSliDing_tabs_theme" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/md_blue_500</item>
     </style>
 
 </resources>

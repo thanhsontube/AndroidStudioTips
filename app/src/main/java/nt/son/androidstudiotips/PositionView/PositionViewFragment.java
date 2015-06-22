@@ -186,9 +186,9 @@ public class PositionViewFragment extends BaseFragment {
 //
 //                popupWindow.showAsDropDown(view, 200, 200);
 
-                DemoPopupWindow betterPopupWindow = new DemoPopupWindow(view);
+//                DemoPopupWindow betterPopupWindow = new DemoPopupWindow(view);
 
-                betterPopupWindow.showLikeQuickAction(200,200);
+//                betterPopupWindow.showLikeQuickAction(200,200);
 
 
 
